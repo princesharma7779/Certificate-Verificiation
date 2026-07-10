@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Verification Result</title>
+</head>
+<body>
+<h2>Verification Result</h2>
+<div th:if="${certificate != null}">
+    <h3 style="color:green;">Certificate Verified Successfully</h3>
+    <p><b>Certificate ID :</b>
+        <span th:text="${certificate.certificateId}"></span>
+    </p>
+    <p><b>Student Name :</b>
+       <span th:text="${certificate.studentName}"></span>
+    </p>
+    <p><b>Course :</b>
+        <span th:text="${certificate.course}"></span>
+    </p>
+    <p><b>Issue Date :</b>
+        <span th:text="${certificate.issueDate}"></span>
+    </p>
+</div>
+<div th:if="${certificate == null}">
+    <h3 style="color:red;" th:text="${message}"></h3>
+</div>
+<br>
+<a href="/">Verify Another Certificate</a>
+</body>
+</html>
